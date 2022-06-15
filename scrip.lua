@@ -11892,7 +11892,7 @@ if BF then
 	
 	_G.FOVSize = 200
 	
-	SecretTab:Slider("Fov Size",1,700,_G.FOVSize,nil,function(v)
+	SecretTab:Slider("Fov Size",1,500,_G.FOVSize,nil,function(v)
 		_G.FOVSize = v
 	end)
 	
@@ -11902,12 +11902,12 @@ if BF then
 	FOVCircle.Filled = false
 	FOVCircle.Transparency = 0.5
 	FOVCircle.Radius = 200
-	FOVCircle.Color = Color3.fromRGB(255, 0, 0)
+	FOVCircle.Color = Color3.fromRGB(124, 252, 0)
 	
 	game:GetService("RunService").Stepped:Connect(function()
 		FOVCircle.Radius = _G.FOVSize
-		FOVCircle.Thickness = 1
-		FOVCircle.NumSides = 32
+		FOVCircle.Thickness = 10
+		FOVCircle.NumSides = 64
 		FOVCircle.Position = game:GetService('UserInputService'):GetMouseLocation()
 		if ShowFov then
 			FOVCircle.Visible = true
